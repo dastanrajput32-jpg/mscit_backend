@@ -1,0 +1,29 @@
+{
+  "name": "mscit_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node App.js",
+    "dev": "nodemon App.js",
+    "dev:proxy-app": "cross-env USE_PROXY=true nodemon app.js",
+    "proxy-bridge": "node scripts/proxy-bridge.js",
+    "dev:proxy": "concurrently -n bridge,app -c yellow,cyan \"npm:proxy-bridge\" \"npm:dev:proxy-app\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "concurrently": "^10.0.5",
+    "cors": "^2.8.6",
+    "cross-env": "^10.1.0",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "mongoose": "^9.9.3",
+    "nodemon": "^3.1.14",
+    "socks": "^2.8.10"
+  }
+}
